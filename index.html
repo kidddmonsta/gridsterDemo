@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gridster</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="jquery.gridster.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+
+</head>
+<body>
+
+<body>
+<div class="gridster">
+    <ul></ul>
+</div>
+</body>
+
+<!--
+<div class="gridster">
+    <ul>
+        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1"><div> 1111111 </div></li>
+        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1"><div class="chart-title">  <strong> State Selector </strong> </div></li>
+        <li data-row="3" data-col="1" data-sizex="1" data-sizey="1"><div class="chart-wrapper" id="menuselect" style="background-color: #33CC99; height: 60px; width: 70%;">
+            <div class="chart-title">  <strong> State Collector </strong> </div>
+        </div></li>
+
+        <li data-row="1" data-col="2" data-sizex="4" data-sizey="2" style="padding-top:10px;">
+            <div class="chart-wrapper" style="background-color: #33CC99; height: 60px; width: 70%;">
+                <div class="chart-title">  <strong> State Predictor </strong> </div>
+            </div>
+        <li data-row="2" data-col="2" data-sizex="2" data-sizey="2"></li>
+
+        <li data-row="1" data-col="4" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="4" data-sizex="2" data-sizey="1"></li>
+        <li data-row="3" data-col="4" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="5" data-sizex="1" data-sizey="1"></li>
+        <li data-row="3" data-col="5" data-sizex="1" data-sizey="1"></li>
+
+        <li data-row="1" data-col="6" data-sizex="1" data-sizey="1"></li>
+        <li data-row="2" data-col="6" data-sizex="1" data-sizey="2"></li>
+
+    </ul>
+</div>
+-->
+
+<script src="jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+<script src="gridsterOptions.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+
+    var gridster;
+
+    $(function(){
+
+        gridster = $(".gridster > ul").gridster({
+            widget_margins: [9, 9],
+            widget_base_dimensions: [120, 100],
+            resize: {
+                enabled: true,
+            },
+            max_rows: 3,
+            max_cols: 10
+        }).data('gridster');
+
+        var widgets = widgetOptions
+
+        $.each(widgets, function(i, widget){
+            gridster.add_widget.apply(gridster, widget)
+        });
+
+    });
+    /*var gridster;
+
+    $(function () {
+
+        //var log = document.getElementById('log');
+
+
+        gridster = $(".gridster ul").gridster({
+            widget_base_dimensions: [140, 140],
+            widget_margins: [10, 10],
+            resize: {
+                enabled: true,
+
+            }
+        }).data('gridster');
+
+
+    });*/
+</script>
+</body>
+</html>
